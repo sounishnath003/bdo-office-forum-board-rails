@@ -6,6 +6,13 @@
     <h1>Notices</h1>
   </div>
 
+  <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @noticies %>
+    </div>
+    <%= will_paginate @noticies, :container => false %>
+  </div>
+
   <div class="col-sm-6 text-right">
   <%= link_to new_notice_path, class: 'btn btn-primary' do %>
     Add New Notice
