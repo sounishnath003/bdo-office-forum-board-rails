@@ -7,6 +7,7 @@
 @import "bootstrap";
 @import "sticky-footer";
 @import "announcements";
+@import "thredded";
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
@@ -19,4 +20,13 @@
 // Masquerade alert shouldn't have a bottom margin
 body > .alert {
   margin-bottom: 0;
+}
+
+.thredded--main-container {
+  // The padding and max-width are handled by the app's container.
+  max-width: none;
+  padding: 0;
+  @include thredded-media-tablet-and-up {
+    padding: 0;
+  }
 }

@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :notices
   namespace :admin do
       resources :users
 
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
       mount Sidekiq::Web => '/sidekiq'
     end
 
+  mount Thredded::Engine => '/forum'
 
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]

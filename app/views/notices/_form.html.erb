@@ -1,0 +1,49 @@
+<%= form_with(model: notice, local: true) do |form| %>
+  <% if notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+      <ul>
+      <% notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :venue %>
+    <%= form.text_field :venue, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :author %>
+    <%= form.text_field :author, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if notice.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', notice, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if notice.persisted? %>
+      <%= link_to "Cancel", notice, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", notices_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<div class="page-header">
+  <%= link_to notices_path, class: 'btn btn-default' do %>
+    All Notices
+  <% end %>
+  <%= link_to edit_notice_path(@notice), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show notice</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @notice.title %></dd>
+
+  <dt>Venue:</dt>
+  <dd><%= @notice.venue %></dd>
+
+  <dt>Author:</dt>
+  <dd><%= @notice.author %></dd>
+
+  <dt>User:</dt>
+  <dd><%= @notice.user %></dd>
+
+</dl>
