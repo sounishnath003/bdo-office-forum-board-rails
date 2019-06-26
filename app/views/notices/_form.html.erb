@@ -1,4 +1,4 @@
-<%= form_with(model: notice, local: true) do |form| %>
+<%= simple_form_for @notice, html: { multipart: true }  do |form| %>
   <% if notice.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
@@ -17,6 +17,11 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment, class: 'form-control', as: :file, multipart: true %>
+  </div>
+
+   <div class="form-group">
     <%= form.label :venue %>
     <%= form.text_field :venue, class: 'form-control' %>
   </div>
@@ -27,8 +32,8 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: 'form-control' %>
+    <%= form.label :user_id %> <p> <%= current_user.name %> </p>
+    <%= form.text_field :user_id, class: 'form-control', disabled: true , multipart: true%>
   </div>
 
   <div class="form-group">

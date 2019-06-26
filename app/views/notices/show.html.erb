@@ -12,13 +12,15 @@
   <dt>Title:</dt>
   <dd><%= @notice.title %></dd>
 
+  <dt>Attachment Uploaded:</dt>
+  <%= image_tag  @notice.attachment.url(:medium) %>
+  <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank" %>
+
   <dt>Venue:</dt>
   <dd><%= @notice.venue %></dd>
 
   <dt>Author:</dt>
   <dd><%= @notice.author %></dd>
 
-  <dt>User:</dt>
-  <dd><%= @notice.user %></dd>
 
 </dl>

@@ -1,10 +1,11 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.all.order("created_at DESC")
   end
 
   # GET /notices/1
@@ -14,7 +15,8 @@ class NoticesController < ApplicationController
 
   # GET /notices/new
   def new
-    @notice = Notice.new
+    @notice = current_user.notices.build
+    @notice.user = current_user
   end
 
   # GET /notices/1/edit
@@ -24,9 +26,11 @@ class NoticesController < ApplicationController
   # POST /notices
   # POST /notices.json
   def create
-    @notice = Notice.new(notice_params)
+    @notice = current_user.notices.build(notice_params)
+    @notice.user_id = current_user.id
 
     respond_to do |format|
+      
       if @notice.save
         format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
         format.json { render :show, status: :created, location: @notice }
@@ -34,6 +38,7 @@ class NoticesController < ApplicationController
         format.html { render :new }
         format.json { render json: @notice.errors, status: :unprocessable_entity }
       end
+    
     end
   end
 
@@ -42,7 +47,7 @@ class NoticesController < ApplicationController
   def update
     respond_to do |format|
       if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: 'Notice was successfully updated.' }
+        format.html { redirect_to @notice, notice: "Notice #{@notice.title} was successfully updated." }
         format.json { render :show, status: :ok, location: @notice }
       else
         format.html { render :edit }
@@ -69,6 +74,6 @@ class NoticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:title, :venue, :author, :user_id)
+      params.require(:notice).permit(:title, :venue, :author, :user_id, attachment: [])
     end
 end

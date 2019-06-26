@@ -70,3 +70,7 @@ gem 'sidekiq', '~> 5.2', '>= 5.2.5'
 gem 'sitemap_generator', '~> 6.0', '>= 6.0.1'
 gem 'whenever', require: false
 gem 'thredded', '~> 0.16.11'
+gem "paperclip", "~> 6.0.0"
+gem "better_errors"
+gem "simple_form"
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'

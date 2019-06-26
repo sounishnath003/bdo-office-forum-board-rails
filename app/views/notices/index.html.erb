@@ -22,7 +22,7 @@
             <th>Title</th>
             <th>Venue</th>
             <th>Author</th>
-            <th>User</th>
+            <th>Uploaded attachments</th>
             
           <th></th>
         
@@ -37,7 +37,7 @@
                       <td><%= notice.title %></td>
                       <td><%= notice.venue %></td>
                       <td><%= notice.author %></td>
-                      <td><%= notice.user %></td>
+                      <td><%= link_to "Download Now", notice.attachment.to_s, :target => "_blank" %></td>
           
           
             <td><%= link_to 'Show', notice %></td>
