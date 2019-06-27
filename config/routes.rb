@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :users
       resources :notices
+      resources :notifications
+      resources :services
+      resources :announcements
+
 
       root to: "users#index"
     end
