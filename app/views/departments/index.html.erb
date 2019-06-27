@@ -1,43 +1,37 @@
-<div class="flex flex-row justify-between p-5 md:mt-3 m-0">
+<div class="flex flex-col md:flex-row justify-between p-5 md:mt-3 m-0">
   <div class="text-center"><h1 class="text-2xl">Departments</h1></div>
 <div class="text-center">
   <%= form_tag( departments_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search]) %>
-    <%= submit_tag ("Search") %>
-  <% end %>
+    <div class="flex">
+    <div class=""><%= text_field_tag(:search, params[:search], :class => "border rounded-l border-black border-2 px-12 py-2 bg-gray-100") %></div>
+     <div class=""> <%= submit_tag("Search", :class => "bg-indigo-600 border rounded-r m-auto p-2  text-white") %> </div>
+    <% end %>
+  </div>
 </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-        <th>Name</th>
-    
 
-            <th>Designation</th>
-            <th>Officer name</th>
-            <th>Contact</th>
-            
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @departments.each do |department| %>
-        <%= content_tag :tr, id: dom_id(department), class: dom_class(department) do %>
-          
-            <td><%= link_to department.name, department %></td>
-          
-
-                      <td><%= department.designation %></td>
-                      <td><%= department.officer_name %></td>
-                      <td><%= department.contact %></td>
-          
-          
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+    <div class="px-3 py-4 flex justify-center">
+        <table class="w-full text-md bg-white shadow-md rounded mb-4">
+            <tbody>
+            <tr class="border-b">
+                      <th class="text-left p-3 px-5">Name</th>
+                      <th class="text-left p-3 px-5">Designation</th>
+                      <th class="text-left p-3 px-5">Officer name</th>
+                      <th class="text-left p-3 px-5">Contact</th>
+                      <th></th>
+            </tr>
+              <% @departments.each do |department| %>
+              <%= content_tag :tr, id: dom_id(department), class: dom_class(department) do %>
+                  <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                      <td class="p-3 px-5"><%= link_to department.name, department %></td>
+                      <td class="p-3 px-5"><%= department.designation %></td>
+                      <td class="p-3 px-5"><%= department.officer_name %></td>
+                      <td class="p-3 px-5"><%= department.contact %></td>
+                  </tr>
+                <% end %>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 </div>
-
