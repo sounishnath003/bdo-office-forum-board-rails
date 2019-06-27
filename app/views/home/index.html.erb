@@ -18,11 +18,11 @@
               </div>
               <div><h3 class="text-xl mt-2 mb-4">Ghatal Block</h3></div>
               <b
-                ><div><h1>Under - Paschim Medinipur</h1></div></b
+                ><div><h5 class="text-xl font-bold">Under - Paschim Medinipur</h1></div></b
               >
               <b>
                 <div>
-                  <span>
+                  <span class="font-bold">
                     Rathipur * Ghatal * Paschim Medinipur
                   </span>
                 </div>
@@ -136,18 +136,15 @@
             </div>
           </div>
         </div>
-        <div class="text-center w-full">
+        <div class="text-center w-full md:m-0 mt-8">
           <div><h2 class="text-3xl">Live Photos</h2></div>
           <div class="tracking-loose">
             perferendis nihil? Quae, quibusdam illo tempore dicta neque
             consectetur repellendus maiores, sapiente qui tenetur eum non fugiat
             distinctio omnis. Tempore et labore tenetur qui similique culpa.
           </div>
-          <img
-            src="gh-bdo-office.PNG"
-            alt=""
-            class="md:m-5 mt-5 mb-5 rounded shadow-lg"
-          />
+
+          <%= image_tag  "gh-bdo-office.PNG", alt: "bdo-office", class: "md:m-5 mt-5 mb-5 rounded shadow-lg" %>
           <div class="tracking-loose">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum sed
             quis natus explicabo error dolorem voluptatum, commodi provident. In
@@ -164,12 +161,17 @@
       <div class="text-center py-4">
         <div class="text-3xl">Notice & Annoucement</div>
         <div class="mt-8">
-          <div
-            class="flex shadow-lg  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center"
-          >
-            <div class="text-center font-bold w-1/6">
-              Indian Cultural Program
-            </div>
+            <% @notices.each do |notice| %>
+                <div class="flex shadow-lg  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
+                    <div class="text-center font-bold w-1/6">
+                        <%= link_to notice.title, notice %>
+                     </div>        
+                    <div class="text-center font-bold w-1/6">
+                        <%= link_to  notice.created_at..strftime("%b %-d %Y, %I:%M%p"), notice %>
+                    </div>
+
+            <% end %>
+
             <div class="text-center font w-1/6">22 arpil, 2019</div>
             <div class="text-center font w-1/6">Ghatal Stadium</div>
             <div class="text-center font w-1/6">Organise</div>
