@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :departments
+  resources :departments, only: [:index, :show]
   get 'users/index'
   get 'users/show'
   get 'user/show'
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :notifications
       resources :services
       resources :announcements
+      resources :departments
 
 
       root to: "users#index"
