@@ -15,6 +15,10 @@ class DepartmentDashboard < Administrate::BaseDashboard
     contact: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    search: Field::String.with_options(
+      searchable: true,
+      searchable_field: 'name',
+    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
