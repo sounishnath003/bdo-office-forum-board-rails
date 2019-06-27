@@ -11,10 +11,10 @@
 </div>
 
 
-    <div class="px-3 py-4 flex justify-center">
-        <table class="w-full text-md bg-white shadow-md rounded mb-4">
+    <div class="px-3 max-w-5xl m-auto  py-4 flex-col flex-wrap md:flex-row flex justify-center">
+        <table class="w-full text-md bg-white shadow-xl rounded-lg mb-4">
             <tbody>
-            <tr class="border-b">
+            <tr class="border-b ">
                       <th class="text-left p-3 px-5">Name</th>
                       <th class="text-left p-3 px-5">Designation</th>
                       <th class="text-left p-3 px-5">Officer name</th>
@@ -24,10 +24,10 @@
               <% @departments.each do |department| %>
               <%= content_tag :tr, id: dom_id(department), class: dom_class(department) do %>
                   <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                      <td class="p-3 px-5"><%= link_to department.name, department %></td>
-                      <td class="p-3 px-5"><%= department.designation %></td>
-                      <td class="p-3 px-5"><%= department.officer_name %></td>
-                      <td class="p-3 px-5"><%= department.contact %></td>
+                      <td class="p-3 mb-2 px-5"><%= link_to department.name, department %></td>
+                      <td class="p-3 mb-2 px-5"><%= department.designation %></td>
+                      <td class="p-3 mb-2 px-5"><%= department.officer_name %></td>
+                      <td class="p-3 mb-2 px-5"><%= department.contact %></td>
                   </tr>
                 <% end %>
                 <% end %>
