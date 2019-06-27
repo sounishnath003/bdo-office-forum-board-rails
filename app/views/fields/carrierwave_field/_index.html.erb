@@ -1,0 +1,14 @@
+<%
+=begin%>
+ <%= field.to_s %> 
+<%
+=end%>
+
+
+<% if field.multiple? %>
+  <%= pluralize(field.files.size, field.attribute.to_s.humanize.downcase) %>
+<% elsif field.file.present? %>
+  <%= link_to 'View', field.file.url, title: field.file.filename, target: '_blank' %>
+<% else %>
+  -
+<% end %>

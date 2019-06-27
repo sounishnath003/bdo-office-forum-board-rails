@@ -74,3 +74,6 @@ gem "paperclip", "~> 6.0.0"
 gem "better_errors"
 gem "simple_form"
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'binding_of_caller'
+gem 'carrierwave'
+gem 'administrate-field-carrierwave', '~> 0.4.1'

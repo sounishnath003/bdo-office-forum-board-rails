@@ -15,7 +15,7 @@ class NoticesController < ApplicationController
 
   # GET /notices/new
   def new
-    @notice = current_user.notices.build
+    @notice = current_user.notices.build #current_user.notices.build
     @notice.user = current_user
   end
 

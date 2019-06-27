@@ -13,7 +13,7 @@
   <dd><%= @notice.title %></dd>
 
   <dt>Attachment Uploaded:</dt>
-  <%= image_tag  @notice.attachment.url(:medium) %>
+  <%#= image_tag  @notice.attachment.url(:medium) %>
   <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank" %>
 
   <dt>Venue:</dt>

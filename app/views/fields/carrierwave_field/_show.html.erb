@@ -1,0 +1,29 @@
+<%
+=begin%>
+ <%= field.to_s %> 
+<%
+=end%>
+
+<% if field.multiple? %>
+  <% if field.files.any? %>
+    <ul>
+      <%- field.files.each do |file| %>
+        <li>
+          <% if field.show_file? %>
+            <%= render 'fields/carrierwave/file', file: file %>
+          <% else %>
+            -
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <span>No file(s) uploaded yet</span>
+  <% end %>
+<% else %>
+  <% if field.show_file? %>
+    <%= render 'fields/carrierwave/file', file: field.file %>
+  <% else %>
+      -
+  <% end %>
+<% end %>

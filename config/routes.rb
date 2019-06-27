@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :notices
   namespace :admin do
       resources :users
+      resources :notices
 
       root to: "users#index"
     end
