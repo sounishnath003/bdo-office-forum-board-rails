@@ -2,12 +2,17 @@
 // $light-orange: #ff8c00;
 // $navbar-default-color: $light-orange;
 
+* {
+  font-family: product sans ;
+}
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap";
 @import "sticky-footer";
 @import "announcements";
 @import "thredded";
+@import "./tailwind.css" ;
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
