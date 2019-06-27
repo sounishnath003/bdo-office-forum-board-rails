@@ -2,9 +2,12 @@
   <%= link_to notices_path, class: 'btn btn-default' do %>
     All Notices
   <% end %>
-  <%= link_to edit_notice_path(@notice), class: 'btn btn-primary' do %>
-    Edit
-  <% end %>
+
+  <% if user_signed_in? && current_user.admin == true %>
+    <%= link_to admin_notice_path(@notice), class: 'btn btn-primary'  do %>
+      Edit
+    <% end %>
+  <% end %>  
   <h1>Show notice</h1>
 </div>
 

@@ -13,11 +13,6 @@
     <%= will_paginate @noticies, :container => false %>
   </div>
 
-  <div class="col-sm-6 text-right">
-  <%= link_to new_notice_path, class: 'btn btn-primary' do %>
-    Add New Notice
-  <% end %>
-  </div>
 </div>
 
 <div class="table-responsive">
@@ -44,7 +39,6 @@
                       <td><%= notice.title %></td>
                       <td><%= notice.venue %></td>
                       <td><%= notice.author %></td>
-                      <td><#%= link_to "Download Now", notice.attachment.to_s, :target => "_blank" %></td>
                       <td><%= link_to "Download Now", notice.attachment_url, :target => "_blank" %></td>
           
           

@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :notices
+  resources :notices, only: [:index, :show]
   namespace :admin do
       resources :users
       resources :notices
@@ -19,10 +19,12 @@ Rails.application.routes.draw do
     end
 
   mount Thredded::Engine => '/forum'
+  post 'create_user' => 'users#create', as: :create_user  
+
 
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, except: [:create]
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
