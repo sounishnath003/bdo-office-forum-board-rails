@@ -159,24 +159,29 @@
     </section>
     <section class="mt-10 m-auto max-w-4xl">
       <div class="text-center mt-6 py-4">
-        <div class="text-3xl">Notice & Annoucement</div>
+      <div class="text-3xl mb-5">Notice & Annoucement</div>
+        <div class="d-flex justify-content-center">
+            <div class="digg_pagination text-center">
+              <%= will_paginate @notices, :container => false %>
+            </div>
+        </div>
                 <div class="mt-8">
                 <% @notices.each do |notice| %>
-                    <div class="flex shadow-lg mb-8  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
-                        <td> <div class="text-center font-bold w-1/6">
-                                <%= link_to notice.title, notice %>
-                            </div>        
-                            <div class="text-center font-bold w-1/6">
-                                    <%= link_to  notice.created_at.strftime("%b %-d %Y, %I:%M%p"), notice %>
-                                </div>
-                            <div class="text-center font w-1/6"><%= link_to  notice.venue, notice %> </div>
-                            <div class="text-center font w-1/6 text-blue-600">Admin</div>
-                            <div class="text-center font w-1/6"><%= link_to  notice.user.name, notice %></div> </td>
-                            <div class="text-center font-bold w-1/6 bg-blue-100 py-2 m-auto px-2 rounded"><%= link_to "Download Now",  notice.attachment_url, target: "_blank" %></div>
-                        </td>
-          </div>
-        <% end %>
-        </div>
+                        <div class="flex shadow-lg mb-8  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
+                            <td> <div class="text-center font-bold w-1/6">
+                                    <%= link_to notice.title, notice %>
+                                </div>        
+                                <div class="text-center font-bold w-1/6">
+                                        <%= link_to  notice.created_at.strftime("%b %-d %Y, %I:%M%p"), notice %>
+                                    </div>
+                                <div class="text-center font w-1/6"><%= link_to  notice.venue, notice %> </div>
+                                <div class="text-center font w-1/6 text-blue-600">Admin</div>
+                                <div class="text-center font w-1/6"><%= link_to  notice.user.name, notice %></div> </td>
+                                <div class="text-center font-bold w-1/6 bg-blue-100 py-2 m-auto px-2 rounded"><%= link_to "Download Now",  notice.attachment_url, target: "_blank" %></div>
+                            </td>
+                         </div>
+                <% end %>
+                </div>
         </div>
     </section>
 
