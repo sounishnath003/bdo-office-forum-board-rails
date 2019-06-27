@@ -4,7 +4,7 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.json
   def index
-    @departments = Department.all
+    @departments = Department.search(params[:search])
   end
 
   # GET /departments/1
@@ -28,7 +28,7 @@ class DepartmentsController < ApplicationController
 
     respond_to do |format|
       if @department.save
-        format.html { redirect_to @department, notice: 'Department was successfully created.' }
+        format.html { redirect_to @department, notice: "Department #{department.officer_name} was successfully created." }
         format.json { render :show, status: :created, location: @department }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class DepartmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.require(:department).permit(:name, :designation, :officer_name, :contact)
+      params.require(:department).permit(:name, :designation, :officer_name, :contact, :search)
     end
 end

@@ -1,11 +1,11 @@
-
-
-
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Departments</h1>
-  </div>
-
+<div class="flex flex-row justify-between p-5 md:mt-3 m-0">
+  <div class="text-center"><h1 class="text-2xl">Departments</h1></div>
+<div class="text-center">
+  <%= form_tag( departments_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
+  <% end %>
+</div>
 </div>
 
 <div class="table-responsive">
