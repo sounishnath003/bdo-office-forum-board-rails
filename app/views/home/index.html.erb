@@ -160,78 +160,25 @@
     <section class="mt-10 m-auto max-w-4xl">
       <div class="text-center py-4">
         <div class="text-3xl">Notice & Annoucement</div>
-        <div class="mt-8">
-            <% @notices.each do |notice| %>
-                <div class="flex shadow-lg  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
-                    <div class="text-center font-bold w-1/6">
-                        <%= link_to notice.title, notice %>
-                     </div>        
-                    <div class="text-center font-bold w-1/6">
-                        <%= link_to  notice.created_at..strftime("%b %-d %Y, %I:%M%p"), notice %>
-                    </div>
-
-            <% end %>
-
-            <div class="text-center font w-1/6">22 arpil, 2019</div>
-            <div class="text-center font w-1/6">Ghatal Stadium</div>
-            <div class="text-center font w-1/6">Organise</div>
-            <div class="text-center font w-1/6">BDO</div>
-            <div class="text-center font-bold w-1/6">22 Views</div>
+            <table class="table-auto">
+                <tbody class="mt-8">
+                <% @notices.each do |notice| %>
+                    <div class="flex shadow-lg  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
+                        <td> <div class="text-center font-bold w-1/6">
+                                <%= link_to notice.title, notice %>
+                            </div>        
+                            <div class="text-center font-bold w-1/6">
+                                    <%= link_to  notice.created_at.strftime("%b %-d %Y, %I:%M%p"), notice %>
+                                </div>
+                            <div class="text-center font w-1/6"><%= link_to  notice.venue, notice %> </div>
+                            <div class="text-center font w-1/6 text-blue-600">Admin</div>
+                            <div class="text-center font w-1/6"><%= link_to  notice.user.name, notice %></div> </td>
+                            <div class="text-center font-bold w-1/6 bg-blue-100 py-2 m-auto px-2 rounded"><%= link_to "Download Now",  notice.attachment_url, target: "_blank" %></div>
+                        </td>
           </div>
-        </div>
-
-        <div class="mt-8">
-          <div
-            class="flex p-6 rounded-lg hover:shadow-2xl hover:bg-red-100 shadow-lg justify-center md:flex-row"
-          >
-            <div class="text-center font-bold w-1/6">
-              Indian Cultural Program
-            </div>
-            <div class="text-center font w-1/6">22 arpil, 2019</div>
-            <div class="text-center font w-1/6">Ghatal Stadium</div>
-            <div class="text-center font w-1/6">Organise</div>
-            <div class="text-center font w-1/6">BDO</div>
-            <div
-              class="text-center hover:shadow-2xl hover:bg-red-100 font-bold w-1/6"
-            >
-              22 Views
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-8">
-          <div
-            class="flex p-6 hover:shadow-2xl hover:bg-red-100 shadow-lg justify-center md:flex-row"
-          >
-            <div class="text-center font-bold w-1/6">
-              Indian Cultural Program
-            </div>
-            <div class="text-center font w-1/6">22 arpil, 2019</div>
-            <div class="text-center font w-1/6">Ghatal Stadium</div>
-            <div class="text-center font w-1/6">Organise</div>
-            <div class="text-center font w-1/6">BDO</div>
-            <div class="text-center font-bold w-1/6">22 Views</div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-8 p-8"></div>
+        <% end %>
+        </tbody>
+        </table>
     </section>
 
 <!--ends here homepage-->
-
-
-
-<% @notices.each do |notices| %>
-          <div class="content">
-            <p class="title is-4">
-              <%= link_to notices.title, notices %>
-            </p>
-            <p class="subtitle is-6">
-              <%= link_to notices.venue, notices %>
-            </p>
-            <span class="text-is-4">
-              <td><%= link_to "Download Now", notices.attachment_url, :target => "_blank" %></td>
-            </span>
-          </div>
-          <hr>
-<% end %>

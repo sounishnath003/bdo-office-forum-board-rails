@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get 'user/show'
+  get 'user/index'
   resources :notices, only: [:index, :show]
   namespace :admin do
       resources :users
