@@ -1,2 +1,17 @@
 <h1 class="p-5 shadow-md rounded bg-yellow-400">Welcome to Jumpstart!</h1>
 <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+<% @notices.each do |notices| %>
+          <div class="content">
+            <p class="title is-4">
+              <%= link_to notices.title, notices %>
+            </p>
+            <p class="subtitle is-6">
+              <%= link_to notices.venue, notices %>
+            </p>
+            <span class="text-is-4">
+              <td><%= link_to "Download Now", notices.attachment_url, :target => "_blank" %></td>
+            </span>
+          </div>
+          <hr>
+          <% end %>
