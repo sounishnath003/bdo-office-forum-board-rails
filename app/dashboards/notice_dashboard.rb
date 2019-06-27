@@ -59,10 +59,10 @@ class NoticeDashboard < Administrate::BaseDashboard
     :title,
     :venue,
     :author,
-    :attachment_file_name,
-    :attachment_content_type,
-    :attachment_file_size,
-    :attachment_updated_at,
+    # :attachment_file_name,
+    # :attachment_content_type,
+    # :attachment_file_size,
+    # :attachment_updated_at,
     :attachment,
   ].freeze
 
