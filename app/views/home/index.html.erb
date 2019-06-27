@@ -158,12 +158,11 @@
       </max-w-4xl>
     </section>
     <section class="mt-10 m-auto max-w-4xl">
-      <div class="text-center py-4">
+      <div class="text-center mt-6 py-4">
         <div class="text-3xl">Notice & Annoucement</div>
-            <table class="table-auto">
-                <tbody class="mt-8">
+                <div class="mt-8">
                 <% @notices.each do |notice| %>
-                    <div class="flex shadow-lg  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
+                    <div class="flex shadow-lg mb-8  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center">
                         <td> <div class="text-center font-bold w-1/6">
                                 <%= link_to notice.title, notice %>
                             </div>        
@@ -177,8 +176,8 @@
                         </td>
           </div>
         <% end %>
-        </tbody>
-        </table>
+        </div>
+        </div>
     </section>
 
 <!--ends here homepage-->
