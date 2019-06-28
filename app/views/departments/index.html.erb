@@ -24,7 +24,7 @@
               <% @departments.each do |department| %>
               <%= content_tag :tr, id: dom_id(department), class: dom_class(department) do %>
                   <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                      <td class="p-3 mb-2 px-5"><%= link_to department.name, department %></td>
+                      <td class="p-3 mb-2 text-blue-400 px-5"><%= department.name %></td>
                       <td class="p-3 mb-2 px-5"><%= department.designation %></td>
                       <td class="p-3 mb-2 px-5"><%= department.officer_name %></td>
                       <td class="p-3 mb-2 px-5"><%= department.contact %></td>
