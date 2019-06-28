@@ -2,8 +2,8 @@
 
     <h1 class="mb-5">What's New</h1>
 
-    <div class="card shadow-lg">
-      <div class="card-body rounded-lg bg-yellow-400 p-10">
+    <div class="card shadow p-4 bg-blue-100">
+      <div class="card-body rounded-lg p-10">
         <% @announcements.each_with_index do |announcement, index| %>
           <% if index != 0 %>
             <div class="row"><div class="col"><hr /></div></div>
@@ -15,10 +15,12 @@
                 <strong><%= announcement.published_at.strftime("%b %d") %></strong>
               <% end %>
             </div>
-            <div class="col">
+            <div class="col p-2 bg-gray-100">
               <strong class="<%= announcement_class(announcement.announcement_type) %>"><%= announcement.announcement_type.titleize %>:</strong>
-              <strong><%= announcement.name %></strong>
-              <%= simple_format announcement.description %>
+              <strong class="text-indigo-300"><%= announcement.name %></strong>
+              <div class="mt-2">
+                <%= simple_format announcement.description %>
+              </div>
             </div>
           </div>
         <% end %>

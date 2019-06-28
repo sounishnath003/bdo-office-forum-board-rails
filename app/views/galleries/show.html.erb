@@ -1,0 +1,15 @@
+<div class="page-header">
+  <%= link_to galleries_path, class: 'btn btn-default' do %>
+    All Galleries
+  <% end %>
+  <%= link_to edit_gallery_path(@gallery), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show gallery</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Photo:</dt>
+  <dd><%= @gallery.photo %></dd>
+
+</dl>
