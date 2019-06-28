@@ -17,7 +17,11 @@
 
   <dt>Attachment Uploaded:</dt>
   <%#= image_tag  @notice.attachment.url(:medium) %>
-  <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank" %>
+  <% if @notice.attachment_url.present? %>
+    <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank" %>
+  <% else %>  
+  No Attachment Found
+  <% end %>
 
   <dt>Venue:</dt>
   <dd><%= @notice.venue %></dd>

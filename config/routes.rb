@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'user/show'
   get 'user/index'
-  resources :notices, only: [:index, :show]
+  
+  resources :notices, only: [:index, :show] do 
+     member do 
+        get 'api_token'
+      end
+  end
   namespace :admin do
       resources :users
       resources :notices
@@ -20,6 +25,14 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
+
+    namespace :api do 
+      namespace :v1 do 
+        resources :notices
+      end
+    end
+
+
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
     authenticate :user, lambda { |u| u.admin? } do

@@ -42,6 +42,19 @@ class NoticesController < ApplicationController
     end
   end
 
+
+    def api_token
+      @notice = notice.find(params[:id])     
+      
+      respond_to do |format|
+        format.json { render :json => @notice.api_token, :status => :ok }
+        format.html {  }
+      end
+    end
+
+
+
+
   # PATCH/PUT /notices/1
   # PATCH/PUT /notices/1.json
   def update

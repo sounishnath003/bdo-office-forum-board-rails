@@ -17,6 +17,18 @@ module Admin
     #   Foo.find_by!(slug: param)
     # end
 
+      def api_token
+  @user = User.find(params[:id])     
+  
+  respond_to do |format|
+    format.json { render :json => @user.api_token, :status => :ok }
+    format.html {  }
+  end
+
+end
+
+
+
     # Override this if you have certain roles that require a subset
     # this will be used to set the records shown on the `index` action.
     #

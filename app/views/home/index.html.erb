@@ -177,7 +177,11 @@
                                 <div class="text-center font w-1/6"><%= link_to  notice.venue, notice %> </div>
                                 <div class="text-center font w-1/6 text-blue-600">Admin</div>
                                 <div class="text-center font w-1/6"><%= link_to  notice.user.name, notice %></div> </td>
-                                <div class="text-center font-bold w-1/6 bg-blue-100 py-2 m-auto px-2 rounded"><%= link_to "Download Now",  notice.attachment_url, target: "_blank" %></div>
+                                <% if notice.attachment_url.present? %>
+                                  <div class="text-center font-bold w-1/6 bg-blue-100 py-2 m-auto px-2 rounded"><%= link_to "Download Now",  notice.attachment_url, target: "_blank" %></div>
+                                  <% else %>
+                                  <div class="text-center font-bold w-1/6 bg-blue-100 py-2 m-auto px-2 rounded">No attachment</div>
+                                <% end %>
                             </td>
                          </div>
                 <% end %>
