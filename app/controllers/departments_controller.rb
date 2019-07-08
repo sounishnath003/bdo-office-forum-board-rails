@@ -4,7 +4,8 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.json
   def index
-    @departments = Department.search(params[:search])
+    @search = Department.ransack(params[:q])
+    @departments = @search.result.order("created_at DESC")
   end
 
   # GET /departments/1
