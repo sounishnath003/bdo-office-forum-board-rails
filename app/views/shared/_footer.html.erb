@@ -1,9 +1,14 @@
-<footer class="footer text-muted bg-light">
-  <div class="container">
-    <span>© <%= Date.today.year %> Your Company</span>
+<footer class="footer text-muted">
+ <div class="container">
+    <span class="m-auto">
+      Sounish Nath - Fullstack Dev
+      © <%= Date.today.year %>
+    </span>
     <ul class="list-inline mb-0 float-right">
       <li class="list-inline-item mr-3"><%= link_to "Terms", terms_path %></li>
+      <li class="list-inline-item mr-3"><%= link_to "GitHub", "https://github.com/sounishnath003", :target => "_blank" %></li>
+      <li class="list-inline-item mr-3"><a href="mailto: flock.sinasini@gmail.com" class="link">Say Hello</a></li>
       <li class="list-inline-item mr-3"><%= link_to "Privacy", privacy_path %></li>
     </ul>
-  </div>
+  </div> 
 </footer>

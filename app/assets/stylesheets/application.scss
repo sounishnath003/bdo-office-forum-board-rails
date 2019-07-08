@@ -119,3 +119,36 @@ body > .alert {
         background: rgb(131,58,180);
 background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
       }
+
+
+  * {
+        font-family: product sans;
+      }
+      .bg-sea-greeen {
+        background: rgb(26, 250, 220);
+      }
+      .bg-gradiant {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          63deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(86, 0, 233, 1) 100%
+        );
+      }
+      .bg-gradiant-button {
+        background: rgb(131, 58, 180);
+        background: linear-gradient(
+          63deg,
+          rgba(131, 58, 180, 1) 0%,
+          rgba(253, 29, 29, 1) 50%,
+          rgba(252, 176, 69, 1) 100%
+        );
+      }
+      .bg-gradiant-footer {
+        background: rgb(63, 94, 251);
+        background: radial-gradient(
+          circle,
+          rgba(63, 94, 251, 1) 0%,
+          rgba(252, 70, 107, 1) 100%
+        );
+      }

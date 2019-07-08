@@ -14,7 +14,7 @@
 
       
       <div class="mt-8 shadow-lg rounded">
-      <div class="mt-4 pt-4 px-4"><h4 class="text-indigo-600">notice on: <%= @notice.created_at.strftime("%b %d %Y") %></h4></div>
+      <div class="mt-4 pt-4 px-4"><h4 class="text-indigo-600">Notice on: <%= @notice.created_at.strftime("%b %d %Y") %></h4></div>
           <div class="bg-gray p-3">
             <dl class="dl-horizontal p-6">
              <div class="flex flex-row justify-between mb-4">
@@ -29,7 +29,7 @@
                   <% if @notice.attachment_url.present? %>
                     <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank", class: "text-white" %>
                   <% else %>  
-                  No Attachment Found
+                  <div class="text-white">No Attachment Found</div>
                   <% end %>
                 </div>
               </div>
