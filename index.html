@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./tailwind.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Homepage || Forum</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: product sans;
+      }
+      .bg-sea-greeen {
+        background: rgb(26, 250, 220);
+      }
+      .bg-gradiant {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          63deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(86, 0, 233, 1) 100%
+        );
+      }
+      .bg-gradiant-button {
+        background: rgb(131, 58, 180);
+        background: linear-gradient(
+          63deg,
+          rgba(131, 58, 180, 1) 0%,
+          rgba(253, 29, 29, 1) 50%,
+          rgba(252, 176, 69, 1) 100%
+        );
+      }
+      .bg-gradiant-footer {
+        background: rgb(63, 94, 251);
+        background: radial-gradient(
+          circle,
+          rgba(63, 94, 251, 1) 0%,
+          rgba(252, 70, 107, 1) 100%
+        );
+      }
+    </style>
+    <header>
+      <section>
+        <div
+          class="flex bg-gradiant justify-between w-full p-12 flex-col md:flex-row"
+        >
+          <div class="text-center object-contain md:m-0 mb-6">
+            <img
+              src="./Assets/centralI.png"
+              alt="central-govt-logo"
+              class="h-48 m-auto"
+            />
+            <div class="text-md font-bold bg-yellow-400 p-2">
+              Central Govt. Of India
+            </div>
+          </div>
+          <div class="text-center md:m-0 mb-6">
+            <div>
+              <div>
+                <h2 class="text-2xl">Office Of Block Development Officer</h2>
+              </div>
+              <div><h3 class="text-xl mt-2 mb-4">Ghatal Block</h3></div>
+              <b
+                ><div><h1>Under - Paschim Medinipur</h1></div></b
+              >
+              <b>
+                <div>
+                  <span>
+                    Rathipur * Ghatal * Paschim Medinipur
+                  </span>
+                </div>
+              </b>
+              <div>
+                <h2 class="text-2xl mt-4">
+                  <div class="flex">
+                    <div class="text-center mr-1">
+                      Name of the BDO - Arindam Dasgupta
+                    </div>
+                    <div
+                      class="text-sm bg-yellow-400 p-2 rounded-full font-bold pin-b mb-0 pin-l text-center"
+                    >
+                      WBCS Executive
+                    </div>
+                  </div>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="text-center md:m-0">
+            <div>
+              <img
+                src="./Assets/biswa-bangla.png"
+                alt="biswa-bangla-logo"
+                class="w-32 m-auto h-32"
+              />
+              <div class="text-md font-bold bg-yellow-400 p-2 mt-16">
+                Biswa Bangla
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <nav>
+      <div class="flex justify-center w-full-h-24 flex-col md:flex-row">
+        <div class="text-center md:p-4 md:m-2 m-1 md:mt-0 p-2 w-full">Home</div>
+        <div
+          class="text-center hover:bg-blue-100 md:p-4 md:m-2 m-1 md:mt-0 p-2 w-full"
+        >
+          Photo Gallery
+        </div>
+        <div class="text-center link md:p-4 md:m-2 m-1 md:mt-0 p-2 full">
+          <a
+            class="hover:text-indigo-800 hover:bg-blue-100"
+            href="./departments.html"
+            >Departments</a
+          >
+        </div>
+        <div
+          class="text-center md:p-4 hover:bg-blue-100 md:m-2 m-1 md:mt-0 p-2 w-full"
+        >
+          Contact Us
+        </div>
+        <div
+          class="text-center md:p-4 hover:bg-blue-100 md:m-2 m-1 md:mt-0 p-2 w-full"
+        >
+          Tourism
+        </div>
+        <div
+          class="text-center md:p-4 hover:bg-blue-100 md:m-2 m-1 md:mt-0 p-2 w-full"
+        >
+          Map
+        </div>
+        <div
+          class="text-center md:p-4 hover:bg-blue-100 md:m-2 m-1 md:mt-0 p-2 w-full"
+        >
+          Election
+        </div>
+      </div>
+    </nav>
+    <section class="mt-12">
+      <max-w-4xl
+        class="m-auto max-w-6xl p-12 shadow-xl justify-between bg-blue-100 flex flex-col md:flex-row"
+      >
+        <div class="text-center">
+          <div><h2 class="text-3xl">About Ghatal BDO Office</h2></div>
+          <div class="text tracking-loose text-left  mt-4 max-w-4xl">
+            <div class="text-xl text-left mb-3 font-bold">* Geograpgy</div>
+            Ghatal is located at 22°40′00″N 87°43′00″E. Ghatal CD Block is
+            bounded by Goghat I CD Block, in Hooghly district, in the north,
+            Khanakul I and Khanakul II CD Blocks, in Hooghly District,
+            <br />
+            in the east, Daspur I CD Block in the south and Chandrakona I CD
+            Block in the west. It is located 58 km from Midnapore, the district
+            headquarters.
+            <br />
+            <div class="tracking-loose text-left">
+              <div class="text-xl text-left mb-3 font-bold">
+                * Notable People
+              </div>
+              Ishwar Chandra Vidyasagar, scholar, social reformer and a key
+              figure of the Bengal Renaissance, was born at Birsingha, now in
+              this CD Block, on 26 September 1820.[5][6] porro
+            </div>
+            <br />
+            <div class="tracking-loose text-left ">
+              <div class="text-xl text-left mb-3 font-bold">* Literacy</div>
+              As per the 2001 census, Ghatal block had a total population of
+              190,705, out of which 96,605 were males and 94,100 were females.
+              Ghatal block registered a population growth of 11.83 per cent
+              during the 1991-2001 decade. Decadal growth for the combined
+              Midnapore district was 14.87 per cent.[8]
+              <br />
+              <div class="text-xl  text-left text-left font-bold mt-4 mb-2">
+                * Speciality
+              </div>
+              Decadal growth in West Bengal was 17.45 per cent.[9] Large
+              villages (with 4,000+ population) in Ghatal CD Block are (2011
+              census figures in brackets): Sultanpur (4,206), Erpala (4,503),
+              Mansukha (8,583), Dirghagram (4,513), Dwandbpur (4,060),
+              Radhanagar (5,827), Shilarajnagar (4,082), Pratappur (4,699),
+              Ratneshwar Bati (4,176) and Gopmohal urf Manoharpur (7,010).[7]
+            </div>
+          </div>
+        </div>
+        <div class="text-center w-full">
+          <div><h2 class="text-3xl">Live Photos</h2></div>
+          <div class="tracking-loose">
+            perferendis nihil? Quae, quibusdam illo tempore dicta neque
+            consectetur repellendus maiores, sapiente qui tenetur eum non fugiat
+            distinctio omnis. Tempore et labore tenetur qui similique culpa.
+          </div>
+          <img
+            src="./Assets/gh-bdo-office.PNG"
+            alt=""
+            class="md:m-5 mt-5 mb-5 rounded shadow-lg"
+          />
+          <div class="tracking-loose">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum sed
+            quis natus explicabo error dolorem voluptatum, commodi provident. In
+            repellendus eaque asperiores ullam, nulla quam distinctio eos error
+            perferendis necessitatibus.Distinctio, recusandae. Eligendi ipsam
+          </div>
+
+          <!--image carasoul test-->
+          <!---->
+        </div>
+      </max-w-4xl>
+    </section>
+    <section class="mt-10 m-auto max-w-4xl">
+      <div class="text-center py-4">
+        <div class="text-3xl">Notice & Annoucement</div>
+        <div class="mt-8">
+          <div
+            class="flex shadow-lg  hover:shadow-2xl hover:bg-red-100 p-6 rounded-lg justify-center md:flex-row text-center"
+          >
+            <div class="text-center font-bold w-1/6">
+              Indian Cultural Program
+            </div>
+            <div class="text-center font w-1/6">22 arpil, 2019</div>
+            <div class="text-center font w-1/6">Ghatal Stadium</div>
+            <div class="text-center font w-1/6">Organise</div>
+            <div class="text-center font w-1/6">BDO</div>
+            <div class="text-center font-bold w-1/6">22 Views</div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <div
+            class="flex p-6 rounded-lg hover:shadow-2xl hover:bg-red-100 shadow-lg justify-center md:flex-row"
+          >
+            <div class="text-center font-bold w-1/6">
+              Indian Cultural Program
+            </div>
+            <div class="text-center font w-1/6">22 arpil, 2019</div>
+            <div class="text-center font w-1/6">Ghatal Stadium</div>
+            <div class="text-center font w-1/6">Organise</div>
+            <div class="text-center font w-1/6">BDO</div>
+            <div
+              class="text-center hover:shadow-2xl hover:bg-red-100 font-bold w-1/6"
+            >
+              22 Views
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <div
+            class="flex p-6 hover:shadow-2xl hover:bg-red-100 shadow-lg justify-center md:flex-row"
+          >
+            <div class="text-center font-bold w-1/6">
+              Indian Cultural Program
+            </div>
+            <div class="text-center font w-1/6">22 arpil, 2019</div>
+            <div class="text-center font w-1/6">Ghatal Stadium</div>
+            <div class="text-center font w-1/6">Organise</div>
+            <div class="text-center font w-1/6">BDO</div>
+            <div class="text-center font-bold w-1/6">22 Views</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 p-8"></div>
+    </section>
+
+    <section class="bg-red-500 text-white py-8 w-full">
+      <div class="container mx-auto px-8">
+        <div class="table w-full">
+          <div class="block sm:table-cell">
+            <p class="uppercase text-grey text-sm sm:mb-6">Links</p>
+            <ul class="list-reset text-xs mb-6">
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">FAQ</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Help</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="block sm:table-cell">
+            <p class="uppercase text-grey text-sm sm:mb-6">Legal</p>
+            <ul class="list-reset text-xs mb-6">
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Terms</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="block sm:table-cell">
+            <p class="uppercase text-grey text-sm sm:mb-6">Social</p>
+            <ul class="list-reset text-xs mb-6">
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Facebook</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Linkedin</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark">Twitter</a>
+              </li>
+            </ul>
+          </div>
+          <div class="block sm:table-cell">
+            <p class="uppercase text-grey text-sm sm:mb-6">Subscribe us</p>
+            <ul class="list-reset text-xs mb-6">
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <a href="#" class="text-grey hover:text-grey-dark"
+                  >Official Blog</a
+                >
+              </li>
+              <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+                <div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
+                  <div class="text-red-light mb-2">Newsletter</div>
+                  <p class="text-grey-darker leading-normal">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Commodi, consectetur.
+                  </p>
+                  <div class="mt-4 flex">
+                    <input
+                      type="text"
+                      class="p-2 border border-grey-light text-black round text-grey-dark text-sm h-auto"
+                      placeholder="Your email address"
+                    />
+                    <button
+                      class="bg-white text-black rounded-sm h-auto text-xs p-3"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
