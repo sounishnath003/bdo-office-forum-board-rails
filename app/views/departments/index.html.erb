@@ -2,7 +2,7 @@
   <div class="text-center"><h1 class="text-2xl">Departments</h1></div>
     <div class="text-center">
         <%= search_form_for @search do |f| %>
-          <%= f.search_field :name_or_officer_name_or_designation_or_contact_matches_all , :class => "border rounded-l border-black border-2 px-12 py-2 bg-gray-100" %>
+          <%= f.search_field :name_or_officer_name_or_designation_or_contact_matches_all , :class => "border rounded-l border-black border-2 px-12 py-2 bg-gray-100", placeholder: "Search by any parameters" %>
           <%= f.submit "Search", :class => "bg-indigo-600 border rounded-r m-auto p-2  text-white" %>
         <% end %>
       </div>
