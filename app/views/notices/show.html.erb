@@ -1,33 +1,51 @@
-<div class="page-header">
-  <%= link_to notices_path, class: 'btn btn-default' do %>
-    All Notices
-  <% end %>
+<div class="m-auto max-w-3xl mt-12 p-10">
+        <div class="page-header">
+         <div class=""> <%= link_to notices_path, class: 'btn btn-default' do %>
+            <div class="text-3xl">All Notices</div>
+          <% end %></div>
 
-  <% if user_signed_in? && current_user.admin == true %>
-    <%= link_to admin_notice_path(@notice), class: 'btn btn-primary'  do %>
-      Edit
-    <% end %>
-  <% end %>  
-  <h1>Show notice</h1>
+          <% if user_signed_in? && current_user.admin == true %>
+            <%= link_to admin_notice_path(@notice), class: 'btn btn-primary'  do %>
+              Edit
+            <% end %>
+          <% end %>  
+          
+        </div>
+
+      
+      <div class="mt-8 shadow-lg rounded">
+      <div class="mt-4 pt-4 px-4"><h4 class="text-indigo-600">notice on: <%= @notice.created_at.strftime("%b %d %Y") %></h4></div>
+          <div class="bg-gray p-3">
+            <dl class="dl-horizontal p-6">
+             <div class="flex flex-row justify-between mb-4">
+               <dt class="text-xl font-mono font-bold tracking-tight font-normal">Topic:</dt>
+               <dd class="text-xl"><%= @notice.title %></dd>
+             </div>
+
+              <div class="flex flex-row justify-between mb-4">
+                <dt class="text-xl font-mono font-bold tracking-tight font-normal">Attachment Uploaded:</dt>
+                <%#= image_tag  @notice.attachment.url(:medium) %>
+                <div class="px-6 py-2 bg-indigo-600 text-black">
+                  <% if @notice.attachment_url.present? %>
+                    <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank", class: "text-white" %>
+                  <% else %>  
+                  No Attachment Found
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="flex flex-row justify-between mb-4">
+                <dt class="text-xl font-mono font-bold tracking-tight font-normal">Venue:</dt>
+                <dd class="text-xl"><%= @notice.venue %></dd>
+              </div>
+
+              <div class="flex flex-row justify-between mb-4">
+                <dt class="text-xl font-mono font-bold tracking-tight font-normal">Author:</dt>
+                <dd class="text-xl"><%= @notice.author %></dd>
+              </div>
+            </dl>
+          </div> 
+        </div>
+
+
 </div>
-
-<dl class="dl-horizontal">
-  <dt>Title:</dt>
-  <dd><%= @notice.title %></dd>
-
-  <dt>Attachment Uploaded:</dt>
-  <%#= image_tag  @notice.attachment.url(:medium) %>
-  <% if @notice.attachment_url.present? %>
-    <%= link_to "Download Now",  @notice.attachment.url, :target => "_blank" %>
-  <% else %>  
-  No Attachment Found
-  <% end %>
-
-  <dt>Venue:</dt>
-  <dd><%= @notice.venue %></dd>
-
-  <dt>Author:</dt>
-  <dd><%= @notice.author %></dd>
-
-
-</dl>

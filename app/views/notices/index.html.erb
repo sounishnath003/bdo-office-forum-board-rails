@@ -1,54 +1,52 @@
+<div class="table-responsive max-w-5xl m-auto p-8 mt-8">
+        <div class="row mb-10">
+          <div class="col-sm-6">
+            <h1>Notices</h1>
+          </div>
 
 
+          <div class="d-flex justify-content-center">
+              <div class="digg_pagination text-center">
+                <div class="page_info">
+                  <%= page_entries_info @noticies %>
+                </div>
+                <%= will_paginate @noticies, :container => false %>
+              </div>
+          </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Notices</h1>
-  </div>
-
-
-  <div class="d-flex justify-content-center">
-      <div class="digg_pagination text-center">
-        <div class="page_info">
-          <%= page_entries_info @noticies %>
-        </div>
-        <%= will_paginate @noticies, :container => false %>
-      </div>
-  </div>
-
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-
-            <th>Title</th>
-            <th>Venue</th>
-            <th>Author</th>
-            <th>Uploaded attachments</th>
-            
-          <th></th>
-        
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @notices.each do |notice| %>
-        <%= content_tag :tr, id: dom_id(notice), class: dom_class(notice) do %>
+    </div>
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
           
 
-                      <td><%= notice.title %></td>
-                      <td><%= notice.venue %></td>
-                      <td><%= notice.author %></td>
-                      <td><%= link_to "Download Now", notice.attachment_url, :target => "_blank" %></td>
-          
-          
-            <td><%= link_to 'Show', notice %></td>
-          
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+                  <th>Uploaded at</th>
+                  <th>Title</th>
+                  <th>Venue</th>
+                  <th>Author</th>
+                  <th>Uploaded attachments</th>
+                  
+                <th></th>
+              
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @notices.each do |notice| %>
+              <%= content_tag :tr, id: dom_id(notice), class: dom_class(notice) do %>
+                
+
+                            <td><%= notice.created_at.strftime("%b %d %Y, %-l:%M %P") %></td>
+                            <td><%= notice.title %></td>
+                            <td><%= notice.venue %></td>
+                            <td><%= notice.author %></td>
+                            <td><%= link_to "Download Now", notice.attachment_url, :target => "_blank" %></td>
+                
+                
+                  <td><%= link_to 'Show', notice %></td>
+                
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
 </div>
